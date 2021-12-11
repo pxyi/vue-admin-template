@@ -1,0 +1,128 @@
+@import '@/var.scss';
+.drawer-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1999;
+  background: rgba(0, 0, 0, .5);
+  transition: all .25s;
+  animation: fadeIn .3s forwards;
+  &.active {
+    animation: fadeOut .3s forwards;
+  }
+}
+.drawer-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #fff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2000;
+  transition: all .5s;
+  animation: slideRigth .3s forwards;
+  &.active {
+    animation: slideLeft .3s forwards;
+  }
+}
+@keyframes fadeIn {
+  0%  { opacity: 0;; }
+  100%{ opacity: 1; }
+}
+@keyframes fadeOut {
+  0%  { opacity: 1;; }
+  100%{ opacity: 0; }
+}
+@keyframes slideRigth {
+  0%  { transform: translate3d(100%, 0, 0); }
+  100%{ transform: translate3d(0, 0, 0); }
+}
+@keyframes slideLeft {
+  0%  { transform: translate3d(0, 0, 0); }
+  100%{ transform: translate3d(100%, 0, 0); }
+}
+.drawer-title {
+  align-items: center;
+  color: #72767b;
+  display: flex;
+  margin-bottom: 32px;
+  padding: 20px 20px 0;
+  span {
+    flex: 1;
+  }
+  i {
+    cursor: pointer;
+    font-size: 20px;
+  }
+}
+.drawer-body {
+  flex: 1;
+  overflow: auto;
+  padding: 0 20px 20px;
+}
+.drawer-footer {
+  height: 60px;
+  border-top: solid 1px #e6e6e6;
+  line-height: 60px;
+  text-align: right;
+}
+.drawer-close-btn,
+.drawer-save-btn {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 4px;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: .1s;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 12px;
+}
+.drawer-close-btn {
+  border: 1px solid #dcdfe6;
+  color: #606266;
+  background: #fff;
+  &:hover,
+  &:focus {
+    color: rgb(26, 175, 167);
+    border-color: rgba(26, 175, 167, 0.15);
+    background-color: rgba(26, 175, 167, 0.15);
+  }
+  &:active {
+    color:rgba(26, 175, 167, 0.8);
+    border-color: rgba(26, 175, 167, 0.8);
+    outline: none;
+  }
+}
+.drawer-save-btn {
+  color: #fff;
+  background-color: $--color-base;
+  border: solid 1px $--color-base;
+  &:hover,
+  &:focus {
+    background: rgba($color: $--color-base, $alpha: .8);
+    border-color: rgba($color: $--color-base, $alpha: .8);
+  }
+  &:active {
+    background: rgba($color: $--color-base, $alpha: .65);
+    border-color: rgba($color: $--color-base, $alpha: .65);
+    color: #fff;
+  }
+  &.loading {
+    pointer-events: none;
+    opacity: .6;
+  }
+  i + span {
+    margin-left: 5px;
+  }
+}

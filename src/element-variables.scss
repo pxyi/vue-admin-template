@@ -1,0 +1,68 @@
+@charset "UTF-8";
+html, body, div, ul, ol, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td, section, input, aside, main, section{
+	margin: 0;
+	padding: 0;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	box-sizing: border-box;
+	-webkit-overflow-scrolling: touch;
+}
+body {
+	color: #333;
+	font-size: 14px;
+	font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+}
+ul, ol {
+	list-style: none;
+}
+img {
+	display: inline-block;
+	vertical-align: middle;
+	position: static;
+	float: none;
+}
+
+
+html, body, #app, .el-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 改变主题色变量 */
+$--color-primary: #0079c3;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: "../node_modules/element-plus/dist/fonts";
+
+@import "../node_modules/element-plus/packages/theme-chalk/src/index";
+
+
+:root {
+	--el-color-primary: #0079c3;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	color: inherit;
+	margin: 0;
+	font-weight: 400;
+}
+h1 {
+	font-size: 24px;
+}
+h2 {
+	font-size: 20px;
+}
+h3 {
+	font-size: 18px;
+}
+h4 {
+	font-size: 16px;
+}
+h5 {
+	font-size: 14px;
+}
+h6 {
+	font-size: 12px;
+}
