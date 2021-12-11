@@ -1,3 +1,1 @@
-# 青青书房v1.0
-
-暂无简介.
+# vue-admin-template
